@@ -1,12 +1,13 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from './contact';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  private url = 'http://localhost:5200';
+  private url = environment.url;
   contacts$ = signal<Contact[]>([]);
   contact$ = signal<Contact>({} as Contact);
 
